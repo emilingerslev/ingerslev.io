@@ -16,7 +16,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} image={post.frontmatter.cover_image.childImageSharp.sizes}>
+      <Layout location={this.props.location} image={post.frontmatter.cover_image ? post.frontmatter.cover_image.childImageSharp.sizes : null}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
         <p
