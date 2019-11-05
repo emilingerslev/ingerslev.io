@@ -1,4 +1,148 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[ingerslev.io]]></title><description><![CDATA[ingerslev.io]]></description><link>https://ingerslev.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 02 Jan 2019 09:16:59 GMT</lastBuildDate><item><title><![CDATA[Setup multi master k8s using Kubeadm and Ansible]]></title><link>https://ingerslev.io//2018-12-29-setup-multi-master-k8s-using-kubeadm-and-ansible/</link><guid isPermaLink="false">https://ingerslev.io//2018-12-29-setup-multi-master-k8s-using-kubeadm-and-ansible/</guid><pubDate>Sat, 29 Dec 2018 09:00:35 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[Getting started on my home k8s setup]]></title><description><![CDATA[During the last month, there’s been a lot of changes to my life. I started a new job at Lunar Way, and not least I became a dad for the 3rd…]]></description><link>https://ingerslev.io//2018-09-21-getting-started-on-my-home-k8s-setup/</link><guid isPermaLink="false">https://ingerslev.io//2018-09-21-getting-started-on-my-home-k8s-setup/</guid><pubDate>Fri, 21 Sep 2018 19:56:35 GMT</pubDate><content:encoded>&lt;p&gt;During the last month, there’s been a lot of changes to my life. I started a new job at Lunar Way, and not least I became a dad for the 3rd time, this time to a little boy.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[ingerslev.io]]></title><description><![CDATA[ingerslev.io]]></description><link>https://ingerslev.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 05 Nov 2019 19:21:43 GMT</lastBuildDate><item><title><![CDATA[How to route MacOS (Catalina) traffic as you like ]]></title><description><![CDATA[I often use VPN to connect to either my home or workplace and I guess that’s a pretty common thing to do. When you define a VPN connection…]]></description><link>https://ingerslev.io//2019-11-05-routing-macos-vpn-traffic/</link><guid isPermaLink="false">https://ingerslev.io//2019-11-05-routing-macos-vpn-traffic/</guid><pubDate>Tue, 05 Nov 2019 18:00:35 GMT</pubDate><content:encoded>&lt;p&gt;I often use VPN to connect to either my home or workplace and I guess that’s a pretty common thing to do. When you define a VPN connection using MacOS’ network settings you can tell it to either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;just route traffic the way the VPN is configured to route&lt;/li&gt;
+&lt;li&gt;route everything through the VPN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4e707881939e0a478336e70eb00f8392/150d8/send-all-traffic.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 258px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 10.465116279069768%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsSAAALEgHS3X78AAAAcElEQVQI1zWMUQ6DMAxDuRbSNKRtaIGWJG0DG/c/iJcG7ePJH7bfMD1mbFKR9SKxBksW2PdEloKZEpLni1bUzwnaxHvG4rn6lqtFP94mDF2YuIBLg9oegr9Q7YhTR5rh+SZw20Eu65usJWQXzYV3/ADecEvuFgbfqQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;send-all-traffic&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4e707881939e0a478336e70eb00f8392/150d8/send-all-traffic.png&quot;
+        srcset=&quot;/static/4e707881939e0a478336e70eb00f8392/ba935/send-all-traffic.png 148w,
+/static/4e707881939e0a478336e70eb00f8392/150d8/send-all-traffic.png 258w&quot;
+        sizes=&quot;(max-width: 258px) 100vw, 258px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;If you want something in between that, then the GUI wont help you. However, if you use PPP (which is the default) then there is a nifty hook you can use: &lt;code class=&quot;language-text&quot;&gt;/etc/ppp/ip-up&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This executable file will be called with some predefined arguments every time the VPN connects and allow you to setup some routing. Fx:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/bin/sh&lt;/span&gt;
+/sbin/route add 192.168.1.0/24 -interface &lt;span class=&quot;token variable&quot;&gt;$5&lt;/span&gt;
+/sbin/route add 0.0.0.0/0 -interface &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The file can be created if not already there, just remember to make it executable with &lt;code class=&quot;language-text&quot;&gt;sudo chmod +x /etc/ppp/ip-up&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The above script will route all within 192.168.1.0/24 (classic local network subnet) to the local interface and rest goes over the VPN. It will be handy if you just want to be able to connect to your local area network while connecting to the office VPN.&lt;/p&gt;
+&lt;p&gt;The arguments above and the rest of them is:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Argument&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Example value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$1&lt;/td&gt;
+&lt;td&gt;The VPN interface&lt;/td&gt;
+&lt;td&gt;ppp0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$2&lt;/td&gt;
+&lt;td&gt;unknown&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$3&lt;/td&gt;
+&lt;td&gt;unknown&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$4&lt;/td&gt;
+&lt;td&gt;Your IP on VPN network&lt;/td&gt;
+&lt;td&gt;10.0.13.37&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$5&lt;/td&gt;
+&lt;td&gt;IP of VPN gateway&lt;/td&gt;
+&lt;td&gt;10.0.13.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$6&lt;/td&gt;
+&lt;td&gt;IP of your local network gateway&lt;/td&gt;
+&lt;td&gt;192.168.1.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I’ve been trying to find some good resources for the arguments given to &lt;code class=&quot;language-text&quot;&gt;/etc/ppp/ip-up&lt;/code&gt;, but no luck. Found the best description here &lt;a href=&quot;https://superuser.com/questions/4904/how-to-selectively-route-network-traffic-through-vpn-on-mac-os-x-leopard&quot;&gt;https://superuser.com/questions/4904/how-to-selectively-route-network-traffic-through-vpn-on-mac-os-x-leopard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have more than one VPN connection that you use often, then the above script could come to short. To overcome this we can just switch on fx the IP of the VPN gateway like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$4&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+	192.168.1.1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# Work VPN (from home)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$6&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;192.168.1.1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# if at home (or home like network)&lt;/span&gt;
+      /sbin/route add 192.168.1.0/24 -interface &lt;span class=&quot;token variable&quot;&gt;$5&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# subnet to Home VPN, let rest go it&apos;s normal way&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;
+    /sbin/route add 0.0.0.0/0 -interface &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	192.168.2.1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# Home VPN&lt;/span&gt;
+		/sbin/route add 192.168.1.0/24 -interface &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# Route subnet to Home VPN, let rest go it&apos;s normal way&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	*&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+esac&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;With this in place it:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;give me access to home network, when on remote VPN.&lt;/li&gt;
+&lt;li&gt;it also skips the “home” network part, when using the VPN on the go.&lt;/li&gt;
+&lt;li&gt;lastly it allows me to route stuff to my home network when using my Home VPN.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This was a lot of messy stuff just for some simple routing, but it gets the job done. And networking is messy, just ask the president:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b0ae69927e30afc694bfe2120fbe4efd/0d58d/cables.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 70.35123966942149%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgED/9oADAMBAAIQAxAAAAHRE5tRlP/EABsQAAICAwEAAAAAAAAAAAAAAAIDAAERExQi/9oACAEBAAEFAuhc3BjeuAPlY5olKu//xAAVEQEBAAAAAAAAAAAAAAAAAAAAIf/aAAgBAwEBPwGq/8QAFxEBAAMAAAAAAAAAAAAAAAAAAAERIf/aAAgBAgEBPwHFQ//EAB4QAAIBAwUAAAAAAAAAAAAAAAABIREykTFBQmGB/9oACAEBAAY/ArVglLBYmU0XROzOXh//xAAbEAEAAgMBAQAAAAAAAAAAAAABABEhMXFBYf/aAAgBAQABPyES91XAYt8lZxwBGNIOPiWp6JYGjxP/2gAMAwEAAgADAAAAECcv/8QAFhEAAwAAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/EEpKP//EABYRAQEBAAAAAAAAAAAAAAAAAAABIf/aAAgBAgEBPxC7Qf/EAB4QAQACAQQDAAAAAAAAAAAAAAEAESExUWGhQYGR/9oACAEBAAE/ED6eEVmzKKGt9RZVGLAdxhlAJr25lllRItjzptiaPdkQPk//2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;cables&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b0ae69927e30afc694bfe2120fbe4efd/f8fb9/cables.jpg&quot;
+        srcset=&quot;/static/b0ae69927e30afc694bfe2120fbe4efd/e8976/cables.jpg 148w,
+/static/b0ae69927e30afc694bfe2120fbe4efd/63df2/cables.jpg 295w,
+/static/b0ae69927e30afc694bfe2120fbe4efd/f8fb9/cables.jpg 590w,
+/static/b0ae69927e30afc694bfe2120fbe4efd/85e3d/cables.jpg 885w,
+/static/b0ae69927e30afc694bfe2120fbe4efd/0d58d/cables.jpg 968w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Setup multi master k8s using Kubeadm and Ansible]]></title><link>https://ingerslev.io//2018-12-29-setup-multi-master-k8s-using-kubeadm-and-ansible/</link><guid isPermaLink="false">https://ingerslev.io//2018-12-29-setup-multi-master-k8s-using-kubeadm-and-ansible/</guid><pubDate>Sat, 29 Dec 2018 09:00:35 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[Getting started on my home k8s setup]]></title><description><![CDATA[During the last month, there’s been a lot of changes to my life. I started a new job at Lunar Way, and not least I became a dad for the 3rd…]]></description><link>https://ingerslev.io//2018-09-21-getting-started-on-my-home-k8s-setup/</link><guid isPermaLink="false">https://ingerslev.io//2018-09-21-getting-started-on-my-home-k8s-setup/</guid><pubDate>Fri, 21 Sep 2018 19:56:35 GMT</pubDate><content:encoded>&lt;p&gt;During the last month, there’s been a lot of changes to my life. I started a new job at Lunar Way, and not least I became a dad for the 3rd time, this time to a little boy.&lt;/p&gt;
 &lt;p&gt;Big things!!… this piece is however about how I’m trying to build a reliable home automation setup using kubernetes, raspberry pi’s, home assistant, node red, IHC, hue bulbs, Ring doorbell and much more.&lt;/p&gt;
 &lt;p&gt;By starting at Lunar Way I became a colleague with &lt;a href=&quot;undefined&quot;&gt;Kasper Nissen&lt;/a&gt; which, during one of the geek chats, told me about his (and another colleague, &lt;a href=&quot;undefined&quot;&gt;Martin Jensen&lt;/a&gt;’s) project &lt;a href=&quot;http://kubecloud.io&quot;&gt;kubecloud.io&lt;/a&gt;. In the essence, they build a small cloud of Raspberry Pi’s and installed kubernetes on them. The idea resonated with me and it made me want to replicate it. Not only because I love playing with kubernetes and want my own k8s cloud at home to geek with, but rather that I’ve got a running home automation system which could use some high availability improvements.&lt;/p&gt;
 &lt;h2&gt;Ground Zero&lt;/h2&gt;
